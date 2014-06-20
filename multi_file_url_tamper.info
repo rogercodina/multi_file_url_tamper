@@ -1,0 +1,7 @@
+name = Multi File URL Tamper
+description = This drupal module adds a new tamper plugin which allows to import multiple files into same field: Given a string containing concatenated URL with no separator, it process the string and separates all URL.
+version = "7.x-1.0"
+core = "7.x"
+package = "Feeds"
+
+dependencies[] = feeds_tamper
