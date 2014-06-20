@@ -28,9 +28,11 @@ function multi_file_url_callback($source, $item_key, $element_key, &$field, $set
   $out = array();
   foreach ($field as $f) {
   	$out_tmp = preg_split("/http/", $f, -1, PREG_SPLIT_NO_EMPTY);
-  	$out_tmp = "http".implode(";http",$out_tmp);
-    $out_tmp = explode(";", $out_tmp);
-    $out = array_merge($out, $out_tmp);
+    if(count($out_tmp)>0) {
+    	$out_tmp = "http".implode(";http",$out_tmp);
+      $out_tmp = explode(";", $out_tmp);
+      $out = array_merge($out, $out_tmp);
+    }
   }
   $field = $out;
 }
